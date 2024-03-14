@@ -8,8 +8,8 @@ function LoginForm() {
   return (
     <>
       <div class="bg-gray-100 flex justify-center items-center h-screen">
-        {/* <!-- Left: Image --> */}
-        <div class="w-1/2 h-screen hidden lg:block">
+        {/* <!-- Left: Image --> //class="w-1/2 h-screen hidden lg:block" */ }
+        <div  class="w-1/2 h-screen"> 
           <img
             src = {loginFormSvg}
             alt="Placeholder Image"

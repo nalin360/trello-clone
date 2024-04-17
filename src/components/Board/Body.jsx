@@ -5,10 +5,11 @@ import List from './List'
 
 function Body() {
   return (
-    <div className='w-full border p-3'>
+    <div className='w-full border p-1 bg-blue-gray-500 min-h-screen'>
 
-      <div className='flex flex-wrap gap-3'><List/>
-    
+      <div className='flex flex-wrap gap-1'>
+        <List/>
+
       </div>  
     </div>
   )

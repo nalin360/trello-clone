@@ -5,7 +5,7 @@ import Dashboard from "./pages/Dashboard";
 // import { List } from "@material-tailwind/react";
 import List from "./components/Board/List"
 import Board from "./components/Board";
-import Analytics from "./pages/Analytics";
+// import Analytics from "./pages/Analytics";
 import Body from "./components/Board/Body";
 
 

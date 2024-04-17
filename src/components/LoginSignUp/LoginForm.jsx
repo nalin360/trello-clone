@@ -1,6 +1,6 @@
 import React from "react";
 import loginFormSvg from '../../assets/svg/login.svg'
-
+import { Link } from "react-router-dom";
 
 
 function LoginForm() {
@@ -65,12 +65,14 @@ function LoginForm() {
               </a>
             </div>
             {/* <!-- Login Button --> */}
-            <button
+            <Link
               type="submit"
+              to="/dashboard"
               class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
             >
+              
               Login
-            </button>
+            </Link>
           </form>
           {/* <!-- Sign up  Link --> */}
           <div class="mt-6 text-blue-500 text-center">

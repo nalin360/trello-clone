@@ -5,6 +5,7 @@ const useAuth = () => {
  const [user, setUser] = useState(null);
  const [loading, setLoading] = useState(false);
  const [error, setError] = useState(null);
+ const [userID, setuserID] = useState('');
 
  const baseurl = 'http://localhost:3001'
 
@@ -27,6 +28,8 @@ const useAuth = () => {
 
       const data = await response.json();
       setUser(data);
+      // console.log(data._id);
+      setuserID(data._id)
     } catch (error) {
       setError(error.message);
     } finally {
@@ -53,6 +56,8 @@ const useAuth = () => {
 
       const data = await response.json();
       setUser(data);
+      console.log(data);
+      setuserID(data._id)
     } catch (error) {
       setError(error.message);
     } finally {
@@ -66,7 +71,7 @@ const useAuth = () => {
     setUser(null);
  };
 
- return { user, loading, error, login, register, logout };
+ return { user, loading, error, userID,login, register, logout };
 };
 
 export default useAuth;

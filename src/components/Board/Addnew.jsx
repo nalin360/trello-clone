@@ -2,17 +2,21 @@ import React, { useState } from "react";
 import { addList, addCard } from "../../Redux/reducers/userSlice";
 import { useDispatch } from "react-redux";
 import { log10 } from "chart.js/helpers";
+import useTodo from "../../hooks/useTodo";
+import useAuth from "../../hooks/useAuth";
 
 const Addnew = ({ type, parentId }) => {
   const [inputVal, setInputVal] = useState("");
   const [isFormVisible, setisFormVisible] = useState(false);
-  // console.log("type",type);
-
+  const { userID } = useAuth();
+  console.log(userID);
+  const {todos, loading, error, createTodo } = useTodo(userID); // 
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
     if (type) {
+      createTodo( inputVal , parentId ); // creating a new todo 
       dispatch(
         addCard({ id: Math.random(), title: inputVal, parentId: parentId })
       );

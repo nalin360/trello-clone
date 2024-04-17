@@ -1,6 +1,6 @@
 import React from "react";
 import loginFormSvg from '../../assets/svg/login.svg'
-
+import { Link } from "react-router-dom";
 
 
 function LoginForm() {
@@ -8,8 +8,8 @@ function LoginForm() {
   return (
     <>
       <div class="bg-gray-100 flex justify-center items-center h-screen">
-        {/* <!-- Left: Image --> */}
-        <div class="w-1/2 h-screen hidden lg:block">
+        {/* <!-- Left: Image --> //class="w-1/2 h-screen hidden lg:block" */ }
+        <div  class="w-1/2 h-screen"> 
           <img
             src = {loginFormSvg}
             alt="Placeholder Image"
@@ -65,18 +65,23 @@ function LoginForm() {
               </a>
             </div>
             {/* <!-- Login Button --> */}
-            <button
+            <Link
               type="submit"
+              to="/dashboard"
               class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
             >
+              
               Login
-            </button>
+            </Link>
           </form>
           {/* <!-- Sign up  Link --> */}
           <div class="mt-6 text-blue-500 text-center">
-            <a href="#" class="hover:underline">
+            {/* <a href="#" class="hover:underline">
               Sign up Here
-            </a>
+            </a> */}
+            <Link to="/signup" className="hover:underline">
+          Sign up Here
+        </Link>
           </div>
         </div>
       </div>

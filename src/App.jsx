@@ -7,6 +7,7 @@ import List from "./components/Board/List"
 import Board from "./components/Board";
 // import Analytics from "./pages/Analytics";
 import Body from "./components/Board/Body";
+import Analytics from "./pages/Analytics";
 
 
 
@@ -22,7 +23,7 @@ function App() {
         <Route path="/body" element={<Body />}/>
         <Route path="/dashboard" element={<Dashboard />} >
           <Route path="board" element={<Board/>} />
-          <Route path="analytics" element={<div>analytics</div>} />
+          <Route path="analytics" element={<Analytics/>} />
         </Route>
       </Routes>
 

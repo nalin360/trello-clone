@@ -6,22 +6,17 @@ const initialState = {
 };
 
 const userSlice = createSlice({
-  name: "user",
+  name: "counter",
   initialState: {
     list: [],
+    tests: [6,2,8,4,5],
   },
   reducers: {
-    loginSuccess: (state, action) => {
-      state.isAuthenticated = true;
-      state.user = action.payload;
-    },
-    logout: (state) => {
-      state.isAuthenticated = false;
-      state.user = null;
-    },
+
     addList: (state, action) => {
+      console.log("Before addList:", state.list);
       state.list.push(action.payload);
-      console.log("action called", state.list);
+      console.log("After addList:", state.list);
     },
     addCard: (state, action) => {
       console.log("action", action, state.list);
@@ -45,10 +40,7 @@ const userSlice = createSlice({
       if (itemIndex !== -1) {
         state.list.splice(itemIndex, 1)
       }
-      //   const filteredList = state.list.filter((list) => {
-      //     return list.id !== action.payload;
-      //   });
-      //   state.list = filteredList;
+  
     },
     deleteChildList: (state, action) => {
       const { id, parentId } = action.payload
@@ -64,7 +56,13 @@ const userSlice = createSlice({
         }
       }
 
-    }
+    },
+    extraReducers: (builder) => {
+      builder.addCase(fetchInitialData.fulfilled, (state, action) => {
+        // Assuming the fetched data is in the format needed for your chart
+        state.chartData = action.payload;
+      });
+   },
   },
 });
 
@@ -74,6 +72,7 @@ export const {
   addList,
   addCard,
   deleteChildList,
+  extraReducers,
   deleteList } = userSlice.actions;
 
 export default userSlice.reducer;

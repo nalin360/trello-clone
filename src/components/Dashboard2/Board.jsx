@@ -8,14 +8,14 @@ const Board = () => {
     "Board2": { "boardID": 1232 },
     // Add more boards as needed
  };
-
  return (
     <div>
-      <h1>Boards</h1>
+      <h2>Boards</h2>
       <ul>
-        {Object.keys(boards).map((boardId) => (
-          <li key={boardId}>
-            <Link to={`/dashboard/board/${boardId}`}>{boardId}</Link>
+        {Object.keys(boards).map((boardId , index) => (
+			<li key={index}>
+			  {console.log(boardId)} 
+            <Link to={`/dashboard/board/todoboards/${boards[boardId].boardID}`}>{boardId}</Link>
           </li>
         ))}
       </ul>
